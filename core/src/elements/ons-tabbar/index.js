@@ -289,7 +289,7 @@ export default class TabbarElement extends BaseElement {
     if (this._tabbarBorder) {
       this._tabbarBorder.style.transition = `all ${options.duration || 0}s ${options.timing || ''}`;
 
-      if (this._autogrow && this._tabsRect.length > 0) {
+      if (this._autogrow && this._tabsRect && this._tabsRect.length > 0) {
         const a = Math.floor(index), b = Math.ceil(index), r = index % 1;
         this._tabbarBorder.style.width = lerp(this._tabsRect[a].width, this._tabsRect[b].width, r) + 'px';
         this._tabbarBorder.style.transform = `translate3d(${lerp(this._tabsRect[a].left, this._tabsRect[b].left, r)}px, 0, 0)`;
